@@ -6,7 +6,7 @@ import { CommonModule } from './_common/common.module';
 import { TestMeEntity } from './testme.entity';
 import { AppConfigService } from './_common/services/app-config.service';
 import { AppService } from './app.service';
-import { TestMeRepository } from './testme.repository';
+import { TestMeRepo } from './testme.repo';
 
 @Module({
   imports: [
@@ -19,10 +19,9 @@ import { TestMeRepository } from './testme.repository';
       }),
       inject: [AppConfigService]
     }),
-    CommonModule,
-    TestMeRepository
+    CommonModule
   ],
-  providers: [AppService, TestMeRepository],
+  providers: [AppService, TestMeRepo],
   controllers: [AppController]
 })
 export class AppModule { }
