@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { TestMeRepo } from './testme.repo';
+import { TestMeRepository } from './testme.repository';
 import { TestMeDto } from './testme.dto';
 
 @Injectable()
 export class AppService {
   constructor(
-    private testMeRepository: TestMeRepo
+    private testMeRepository: TestMeRepository
   ) {}
 
   async get(catalogNumber: number): Promise<TestMeDto> {

@@ -6,7 +6,7 @@ import { CommonModule } from './_common/common.module';
 import { TestMeEntity } from './testme.entity';
 import { AppConfigService } from './_common/services/app-config.service';
 import { AppService } from './app.service';
-import { TestMeRepo } from './testme.repo';
+import { TestMeRepository } from './testme.repository';
 
 @Module({
   imports: [
@@ -19,9 +19,10 @@ import { TestMeRepo } from './testme.repo';
       }),
       inject: [AppConfigService]
     }),
-    CommonModule
+    CommonModule,
+    TypeOrmModule.forFeature([TestMeEntity])
   ],
-  providers: [AppService, TestMeRepo],
+  providers: [AppService, TestMeRepository],
   controllers: [AppController]
 })
 export class AppModule { }
